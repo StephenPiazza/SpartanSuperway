@@ -13,6 +13,9 @@ import FirebaseAuth
 
 class SignInViewController: UIViewController {
     
+    var tempEmail = "Stephen.apiazza@gmail.com"
+    var tempPassword = "password"
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -29,6 +32,7 @@ class SignInViewController: UIViewController {
             self.present(alertController,animated: true, completion: nil)
         
         } else {
+            //Using temporary Sign in credentials. Change for release
             FIRAuth.auth()?.signIn(withEmail: email.text!, password: password.text!, completion: {(user, error) in
                 if error == nil {
                     //Succesfully logged in
@@ -44,5 +48,27 @@ class SignInViewController: UIViewController {
             })
         }
     }
+//    
+//    @IBAction func SignIn(_ sender: AnyObject) {
+//            //Using temporary Sign in credentials. Change for release
+//            FIRAuth.auth()?.signIn(withEmail: tempEmail, password: tempPassword, completion: {(user, error) in
+//                if error == nil {
+//                    //Succesfully logged in
+//                    let uid = FIRAuth.auth()?.currentUser?.uid
+//                    print(uid)
+//                    let defualts = UserDefaults.standard
+//                    defualts.set(uid, forKey: "uid")
+//                    self.performSegue(withIdentifier: "SignInSegue", sender: self)
+//                    
+//                } else {
+//                    //Alert User with the firebase message
+//                    let alertController = UIAlertController(title: "Oops!",message: error?.localizedDescription, preferredStyle: .alert)
+//                    let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+//                    alertController.addAction(defaultAction)
+//                    self.present(alertController,animated: true, completion: nil)
+//                }
+//            })
+//    }
+
 
 }

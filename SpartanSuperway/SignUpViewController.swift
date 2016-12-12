@@ -25,7 +25,15 @@ class SignUpViewController: UIViewController {
         if validateUserInformation() {
             FIRAuth.auth()?.createUser(withEmail: email.text!, password: password.text!, completion: { (user, error) in
                 if error == nil {
-                    self.dismiss(animated: true, completion: nil)
+                    var uid = FIRAuth.auth()?.currentUser?.uid
+                    var ref = FIRDatabase.database().reference()
+                    
+                    ref = ref.child("users").child(uid!)
+                    ref.child("firstName").setValue(self.firstName.text)
+                    ref.child("lastName").setValue(self.lastName.text)
+                    ref.child("currentTicket").child("alive").setValue(false)
+                    self.performSegue(withIdentifier: "SignUpSuccessSegue", sender: self)
+                    
                 } else {
                     let alertController = UIAlertController(title: "Oops", message: error?.localizedDescription, preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
