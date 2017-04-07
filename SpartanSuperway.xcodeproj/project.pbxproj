@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1404EA418EE1B3CB93119D10 /* Pods_SpartanSuperway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EBA0084F506C568F3364C8 /* Pods_SpartanSuperway.framework */; };
+		442892011DAEE90100A7E423 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442892001DAEE90100A7E423 /* MainViewController.swift */; };
+		442CAB6D1D9CA7F400A4008F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CAB6C1D9CA7F400A4008F /* SignUpViewController.swift */; };
+		443B25F41DDEB219008F94A1 /* ViewTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F31DDEB219008F94A1 /* ViewTicketsViewController.swift */; };
+		443B25F61DDEB4E3008F94A1 /* PurchaseTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F51DDEB4E3008F94A1 /* PurchaseTicketViewController.swift */; };
+		443B25F81DDFB999008F94A1 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F71DDFB999008F94A1 /* Ticket.swift */; };
+		443B25FA1DE0397C008F94A1 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F91DE0397C008F94A1 /* TicketViewController.swift */; };
 		4470DA281D95D6AA002468D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470DA271D95D6AA002468D8 /* AppDelegate.swift */; };
-		4470DA2A1D95D6AA002468D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470DA291D95D6AA002468D8 /* ViewController.swift */; };
 		4470DA2D1D95D6AA002468D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4470DA2B1D95D6AA002468D8 /* Main.storyboard */; };
 		4470DA2F1D95D6AA002468D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4470DA2E1D95D6AA002468D8 /* Assets.xcassets */; };
 		4470DA321D95D6AA002468D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4470DA301D95D6AA002468D8 /* LaunchScreen.storyboard */; };
 		4470DA3D1D95D6AA002468D8 /* SpartanSuperwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470DA3C1D95D6AA002468D8 /* SpartanSuperwayTests.swift */; };
 		4470DA481D95D6AA002468D8 /* SpartanSuperwayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470DA471D95D6AA002468D8 /* SpartanSuperwayUITests.swift */; };
+		4470DA581D9A10A8002468D8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470DA571D9A10A8002468D8 /* SignInViewController.swift */; };
+		44724D411DF543E200ECD73C /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44724D401DF543E200ECD73C /* TicketTableViewCell.swift */; };
+		44724D431DF54CF200ECD73C /* StatusControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44724D421DF54CF200ECD73C /* StatusControl.swift */; };
+		44724D451DF5514E00ECD73C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44724D441DF5514E00ECD73C /* MapViewController.swift */; };
+		44724D4A1DF75E4E00ECD73C /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44724D491DF75E4E00ECD73C /* DataServices.swift */; };
+		447B4EBC1DA0E5950072AAD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447B4EBB1DA0E5950072AAD4 /* GoogleService-Info.plist */; };
+		449EF5871E96079A0007F2CF /* EtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EF5861E96079A0007F2CF /* EtaView.swift */; };
+		E3944D8975FE400460401CD9 /* Pods_SpartanSuperwayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B531E0B2919443E0F801C2D /* Pods_SpartanSuperwayUITests.framework */; };
+		F6474A3774C473CD57159ECC /* Pods_SpartanSuperwayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC08B5EAB0D52329E90EDF94 /* Pods_SpartanSuperwayTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00CCF6F61CF3BF9BD7726D68 /* Pods-SpartanSuperwayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayTests/Pods-SpartanSuperwayTests.release.xcconfig"; sourceTree = "<group>"; };
+		0E71AFCBCC221751F60EAA6C /* Pods-SpartanSuperway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperway/Pods-SpartanSuperway.debug.xcconfig"; sourceTree = "<group>"; };
+		16EBA0084F506C568F3364C8 /* Pods_SpartanSuperway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		442892001DAEE90100A7E423 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		442CAB6C1D9CA7F400A4008F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		443B25F31DDEB219008F94A1 /* ViewTicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTicketsViewController.swift; sourceTree = "<group>"; };
+		443B25F51DDEB4E3008F94A1 /* PurchaseTicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseTicketViewController.swift; sourceTree = "<group>"; };
+		443B25F71DDFB999008F94A1 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		443B25F91DE0397C008F94A1 /* TicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		4470DA241D95D6AA002468D8 /* SpartanSuperway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanSuperway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4470DA271D95D6AA002468D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4470DA291D95D6AA002468D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4470DA2C1D95D6AA002468D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4470DA2E1D95D6AA002468D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4470DA311D95D6AA002468D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +70,19 @@
 		4470DA431D95D6AA002468D8 /* SpartanSuperwayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanSuperwayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4470DA471D95D6AA002468D8 /* SpartanSuperwayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanSuperwayUITests.swift; sourceTree = "<group>"; };
 		4470DA491D95D6AA002468D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4470DA571D9A10A8002468D8 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		44724D401DF543E200ECD73C /* TicketTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
+		44724D421DF54CF200ECD73C /* StatusControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusControl.swift; sourceTree = "<group>"; };
+		44724D441DF5514E00ECD73C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		44724D491DF75E4E00ECD73C /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		447B4EBB1DA0E5950072AAD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		449EF5861E96079A0007F2CF /* EtaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtaView.swift; sourceTree = "<group>"; };
+		8B531E0B2919443E0F801C2D /* Pods_SpartanSuperwayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperwayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E6E4D41F3795F18F4066B6E /* Pods-SpartanSuperwayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayUITests/Pods-SpartanSuperwayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A1785E424903771A57F50521 /* Pods-SpartanSuperwayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayUITests/Pods-SpartanSuperwayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A97888A68A1306BC17AEC1FC /* Pods-SpartanSuperway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperway.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperway/Pods-SpartanSuperway.release.xcconfig"; sourceTree = "<group>"; };
+		C3363333186E064AA72AD4EA /* Pods-SpartanSuperwayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayTests/Pods-SpartanSuperwayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC08B5EAB0D52329E90EDF94 /* Pods_SpartanSuperwayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperwayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1404EA418EE1B3CB93119D10 /* Pods_SpartanSuperway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6474A3774C473CD57159ECC /* Pods_SpartanSuperwayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3944D8975FE400460401CD9 /* Pods_SpartanSuperwayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +120,8 @@
 				4470DA3B1D95D6AA002468D8 /* SpartanSuperwayTests */,
 				4470DA461D95D6AA002468D8 /* SpartanSuperwayUITests */,
 				4470DA251D95D6AA002468D8 /* Products */,
+				5E9782E499A99F25CE9371A0 /* Pods */,
+				5A2F3E64F65F52E502CAA28F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +138,9 @@
 		4470DA261D95D6AA002468D8 /* SpartanSuperway */ = {
 			isa = PBXGroup;
 			children = (
-				4470DA271D95D6AA002468D8 /* AppDelegate.swift */,
-				4470DA291D95D6AA002468D8 /* ViewController.swift */,
-				4470DA2B1D95D6AA002468D8 /* Main.storyboard */,
-				4470DA2E1D95D6AA002468D8 /* Assets.xcassets */,
-				4470DA301D95D6AA002468D8 /* LaunchScreen.storyboard */,
-				4470DA331D95D6AA002468D8 /* Info.plist */,
+				44724D471DF5F3DC00ECD73C /* SupportFiles */,
+				44724D461DF5F16900ECD73C /* ViewControllers */,
+				44724D481DF5F40800ECD73C /* Models */,
 			);
 			path = SpartanSuperway;
 			sourceTree = "<group>";
@@ -125,6 +163,68 @@
 			path = SpartanSuperwayUITests;
 			sourceTree = "<group>";
 		};
+		44724D461DF5F16900ECD73C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				442892001DAEE90100A7E423 /* MainViewController.swift */,
+				44724D441DF5514E00ECD73C /* MapViewController.swift */,
+				443B25F51DDEB4E3008F94A1 /* PurchaseTicketViewController.swift */,
+				4470DA571D9A10A8002468D8 /* SignInViewController.swift */,
+				442CAB6C1D9CA7F400A4008F /* SignUpViewController.swift */,
+				44724D401DF543E200ECD73C /* TicketTableViewCell.swift */,
+				443B25F91DE0397C008F94A1 /* TicketViewController.swift */,
+				443B25F31DDEB219008F94A1 /* ViewTicketsViewController.swift */,
+				449EF5861E96079A0007F2CF /* EtaView.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		44724D471DF5F3DC00ECD73C /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				447B4EBB1DA0E5950072AAD4 /* GoogleService-Info.plist */,
+				4470DA271D95D6AA002468D8 /* AppDelegate.swift */,
+				4470DA2B1D95D6AA002468D8 /* Main.storyboard */,
+				4470DA2E1D95D6AA002468D8 /* Assets.xcassets */,
+				4470DA301D95D6AA002468D8 /* LaunchScreen.storyboard */,
+				4470DA331D95D6AA002468D8 /* Info.plist */,
+			);
+			name = SupportFiles;
+			sourceTree = "<group>";
+		};
+		44724D481DF5F40800ECD73C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				443B25F71DDFB999008F94A1 /* Ticket.swift */,
+				44724D421DF54CF200ECD73C /* StatusControl.swift */,
+				44724D491DF75E4E00ECD73C /* DataServices.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5A2F3E64F65F52E502CAA28F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16EBA0084F506C568F3364C8 /* Pods_SpartanSuperway.framework */,
+				DC08B5EAB0D52329E90EDF94 /* Pods_SpartanSuperwayTests.framework */,
+				8B531E0B2919443E0F801C2D /* Pods_SpartanSuperwayUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E9782E499A99F25CE9371A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E71AFCBCC221751F60EAA6C /* Pods-SpartanSuperway.debug.xcconfig */,
+				A97888A68A1306BC17AEC1FC /* Pods-SpartanSuperway.release.xcconfig */,
+				C3363333186E064AA72AD4EA /* Pods-SpartanSuperwayTests.debug.xcconfig */,
+				00CCF6F61CF3BF9BD7726D68 /* Pods-SpartanSuperwayTests.release.xcconfig */,
+				A1785E424903771A57F50521 /* Pods-SpartanSuperwayUITests.debug.xcconfig */,
+				8E6E4D41F3795F18F4066B6E /* Pods-SpartanSuperwayUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4470DA4C1D95D6AA002468D8 /* Build configuration list for PBXNativeTarget "SpartanSuperway" */;
 			buildPhases = (
+				DAB878D8E77DC6FB318A2FBB /* [CP] Check Pods Manifest.lock */,
 				4470DA201D95D6AA002468D8 /* Sources */,
 				4470DA211D95D6AA002468D8 /* Frameworks */,
 				4470DA221D95D6AA002468D8 /* Resources */,
+				3AE30F5ADB9AD5DCF3C54DCA /* [CP] Embed Pods Frameworks */,
+				A3222BEC33C3C324CDDB86AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4470DA4F1D95D6AA002468D8 /* Build configuration list for PBXNativeTarget "SpartanSuperwayTests" */;
 			buildPhases = (
+				1D2E2E9A4F6654699FEC8BBE /* [CP] Check Pods Manifest.lock */,
 				4470DA341D95D6AA002468D8 /* Sources */,
 				4470DA351D95D6AA002468D8 /* Frameworks */,
 				4470DA361D95D6AA002468D8 /* Resources */,
+				3F961D87BB5921E7AED4BAFF /* [CP] Embed Pods Frameworks */,
+				4378CA95A5514BE0549E6E80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4470DA521D95D6AA002468D8 /* Build configuration list for PBXNativeTarget "SpartanSuperwayUITests" */;
 			buildPhases = (
+				A88CF9948B7EF9896C88C65B /* [CP] Check Pods Manifest.lock */,
 				4470DA3F1D95D6AA002468D8 /* Sources */,
 				4470DA401D95D6AA002468D8 /* Frameworks */,
 				4470DA411D95D6AA002468D8 /* Resources */,
+				E98838073AAE38D719C10E95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +301,7 @@
 				TargetAttributes = {
 					4470DA231D95D6AA002468D8 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2ZPV6SNEWK;
 						ProvisioningStyle = Automatic;
 					};
 					4470DA371D95D6AA002468D8 = {
@@ -233,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4470DA321D95D6AA002468D8 /* LaunchScreen.storyboard in Resources */,
+				447B4EBC1DA0E5950072AAD4 /* GoogleService-Info.plist in Resources */,
 				4470DA2F1D95D6AA002468D8 /* Assets.xcassets in Resources */,
 				4470DA2D1D95D6AA002468D8 /* Main.storyboard in Resources */,
 			);
@@ -254,13 +364,147 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D2E2E9A4F6654699FEC8BBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3AE30F5ADB9AD5DCF3C54DCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanSuperway/Pods-SpartanSuperway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F961D87BB5921E7AED4BAFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanSuperwayTests/Pods-SpartanSuperwayTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4378CA95A5514BE0549E6E80 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanSuperwayTests/Pods-SpartanSuperwayTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3222BEC33C3C324CDDB86AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanSuperway/Pods-SpartanSuperway-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A88CF9948B7EF9896C88C65B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DAB878D8E77DC6FB318A2FBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E98838073AAE38D719C10E95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanSuperwayUITests/Pods-SpartanSuperwayUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4470DA201D95D6AA002468D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4470DA2A1D95D6AA002468D8 /* ViewController.swift in Sources */,
+				44724D451DF5514E00ECD73C /* MapViewController.swift in Sources */,
+				4470DA581D9A10A8002468D8 /* SignInViewController.swift in Sources */,
+				442CAB6D1D9CA7F400A4008F /* SignUpViewController.swift in Sources */,
+				443B25F81DDFB999008F94A1 /* Ticket.swift in Sources */,
 				4470DA281D95D6AA002468D8 /* AppDelegate.swift in Sources */,
+				443B25F41DDEB219008F94A1 /* ViewTicketsViewController.swift in Sources */,
+				44724D4A1DF75E4E00ECD73C /* DataServices.swift in Sources */,
+				449EF5871E96079A0007F2CF /* EtaView.swift in Sources */,
+				443B25F61DDEB4E3008F94A1 /* PurchaseTicketViewController.swift in Sources */,
+				44724D411DF543E200ECD73C /* TicketTableViewCell.swift in Sources */,
+				44724D431DF54CF200ECD73C /* StatusControl.swift in Sources */,
+				442892011DAEE90100A7E423 /* MainViewController.swift in Sources */,
+				443B25FA1DE0397C008F94A1 /* TicketViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +577,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -383,6 +628,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -410,11 +656,14 @@
 		};
 		4470DA4D1D95D6AA002468D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E71AFCBCC221751F60EAA6C /* Pods-SpartanSuperway.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2ZPV6SNEWK;
 				INFOPLIST_FILE = SpartanSuperway/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engr195.spartansuperway.SpartanSuperway;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spartansuperway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -422,11 +671,14 @@
 		};
 		4470DA4E1D95D6AA002468D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A97888A68A1306BC17AEC1FC /* Pods-SpartanSuperway.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2ZPV6SNEWK;
 				INFOPLIST_FILE = SpartanSuperway/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engr195.spartansuperway.SpartanSuperway;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spartansuperway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -434,6 +686,7 @@
 		};
 		4470DA501D95D6AA002468D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3363333186E064AA72AD4EA /* Pods-SpartanSuperwayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -448,6 +701,7 @@
 		};
 		4470DA511D95D6AA002468D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00CCF6F61CF3BF9BD7726D68 /* Pods-SpartanSuperwayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -462,6 +716,7 @@
 		};
 		4470DA531D95D6AA002468D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1785E424903771A57F50521 /* Pods-SpartanSuperwayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SpartanSuperwayUITests/Info.plist;
@@ -475,6 +730,7 @@
 		};
 		4470DA541D95D6AA002468D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E6E4D41F3795F18F4066B6E /* Pods-SpartanSuperwayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SpartanSuperwayUITests/Info.plist;
@@ -505,6 +761,7 @@
 				4470DA4E1D95D6AA002468D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4470DA4F1D95D6AA002468D8 /* Build configuration list for PBXNativeTarget "SpartanSuperwayTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +770,7 @@
 				4470DA511D95D6AA002468D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4470DA521D95D6AA002468D8 /* Build configuration list for PBXNativeTarget "SpartanSuperwayUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +779,7 @@
 				4470DA541D95D6AA002468D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

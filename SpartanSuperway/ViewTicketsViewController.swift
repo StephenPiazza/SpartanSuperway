@@ -12,6 +12,13 @@ import Firebase
 
 class ViewTicketsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    enum Station: Int {
+        case SJSU = 1
+        case SJSUStadium = 2
+        case Diridon = 3
+        case SantaClara = 4
+    }
+    
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var ticketTableView: UITableView!
 
@@ -61,8 +68,8 @@ class ViewTicketsViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         if let ticket = tempTicket {
-            cell.stationFrom.text = ticket.from
-            cell.stationTo.text = ticket.to
+            cell.stationFrom.text = String(ticket.from)
+            cell.stationTo.text = String(ticket.to)
             cell.departureTime.text = ticket.time        }
         return cell
         
@@ -100,13 +107,13 @@ class ViewTicketsViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func loadSampleTickets() {
-        let ticket = Ticket(from: "Palo Alto", to: "Cupertino", date: Date(), time: "8:30 PM", shareable: false )
-        let ticket1 = Ticket(from: "Sunnyvale", to: "Cupertino", date: Date(), time: "8:30 PM", shareable: false )
-        let ticket2 = Ticket(from: "Mountain View", to: "Cupertino", date: Date(), time: "8:30 PM", shareable: false )
+        let ticket = Ticket(from:1, to: 2, date: Date(), time: "8:30 PM", shareable: false )
+        let ticket1 = Ticket(from: 2, to: 3, date: Date(), time: "8:30 PM", shareable: false )
+        let ticket2 = Ticket(from: 3, to: 4, date: Date(), time: "8:30 PM", shareable: false )
         
-        let ticket3 = Ticket(from: "Sunnyvale", to: "Cupertino", date: Date(), time: "8:30 PM", shareable: false )
-        let ticket4 = Ticket(from: "Sunnyvale", to: "Cupertino", date: Date(), time: "8:30 PM", shareable: false )
-        let ticket5 = Ticket(from: "Sunnyvale", to: "Cupertino", date: Date(), time: "8:30 PM", shareable: false )
+        let ticket3 = Ticket(from: 4, to: 1, date: Date(), time: "8:30 PM", shareable: false )
+        let ticket4 = Ticket(from: 3, to: 2, date: Date(), time: "8:30 PM", shareable: false )
+        let ticket5 = Ticket(from: 2, to: 1, date: Date(), time: "8:30 PM", shareable: false )
         
         currentTickets += [ticket, ticket1, ticket2]
         historyTickets += [ticket3, ticket4, ticket5]

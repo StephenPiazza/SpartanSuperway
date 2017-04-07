@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpartanSuperway/PurchaseTicketViewController.swift"
-            timestampString = "502834455.907598"
+            timestampString = "509488706.799808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "purchaseTicket(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpartanSuperway/MainViewController.swift"
-            timestampString = "502786650.131203"
+            timestampString = "513192595.447207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "EtaStatus"
             landmarkType = "13">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpartanSuperway/TicketViewController.swift"
-            timestampString = "502834511.218385"
+            timestampString = "513292603.662406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpartanSuperway/PurchaseTicketViewController.swift"
-            timestampString = "502847697.372459"
+            timestampString = "509488706.799808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "purchaseTicket(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpartanSuperway/PurchaseTicketViewController.swift"
-            timestampString = "502835239.196792"
+            timestampString = "509490048.273165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,12 +90,122 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpartanSuperway/PurchaseTicketViewController.swift"
-            timestampString = "502835240.757935"
+            timestampString = "509490048.273165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpartanSuperway/PurchaseTicketViewController.swift"
+            timestampString = "509425052.324155"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "Station"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpartanSuperway.PurchaseTicketViewController.locationTo.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
+                  moduleName = "SpartanSuperway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stephenpiazza/Development/Xcode-workspace/SpartanSuperway/SpartanSuperway/PurchaseTicketViewController.swift"
+                  timestampString = "509425052.901172"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpartanSuperway.PurchaseTicketViewController.locationTo.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
+                  moduleName = "SpartanSuperway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stephenpiazza/Development/Xcode-workspace/SpartanSuperway/SpartanSuperway/PurchaseTicketViewController.swift"
+                  timestampString = "509425052.905554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpartanSuperway.PurchaseTicketViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SpartanSuperway.PurchaseTicketViewController"
+                  moduleName = "SpartanSuperway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stephenpiazza/Development/Xcode-workspace/SpartanSuperway/SpartanSuperway/PurchaseTicketViewController.swift"
+                  timestampString = "509425052.90703"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpartanSuperway.PurchaseTicketViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SpartanSuperway.PurchaseTicketViewController&gt;"
+                  moduleName = "SpartanSuperway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stephenpiazza/Development/Xcode-workspace/SpartanSuperway/SpartanSuperway/PurchaseTicketViewController.swift"
+                  timestampString = "509425052.908444"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "91">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpartanSuperway/PurchaseTicketViewController.swift"
+            timestampString = "509491083.289564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "datePickerValueChanged(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpartanSuperway/TicketViewController.swift"
+            timestampString = "513292747.40919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

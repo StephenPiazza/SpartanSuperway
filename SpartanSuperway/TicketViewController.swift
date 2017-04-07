@@ -10,6 +10,14 @@ import UIKit
 
 class TicketViewController: UIViewController {
     
+    enum Station: Int {
+        case SJSU = 1
+        case SJSUStadium = 2
+        case Diridon = 3
+        case SantaClara = 4
+    }
+    
+    
     var ticket: Ticket?
     
     @IBOutlet weak var locationFrom: UILabel!
@@ -25,8 +33,8 @@ class TicketViewController: UIViewController {
         super.viewDidLoad()
         exitButton.layer.cornerRadius = exitButton.frame.size.height/2
         if let tempTicket = self.ticket {
-            locationFrom.text = tempTicket.from
-            locationTo.text = tempTicket.to
+            locationFrom.text = String(tempTicket.from)
+            locationTo.text = String(tempTicket.to)
             date.text = tempTicket.date.description
             time.text = tempTicket.time
             shareable.text = tempTicket.shareable.description

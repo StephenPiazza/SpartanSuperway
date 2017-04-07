@@ -10,13 +10,13 @@ import Foundation
 
 class Ticket {
     
-    let from: String
-    let to: String
+    let from: Int
+    let to: Int
     let date: Date
     let time: String
     let shareable: Bool
     
-    init(from: String, to: String, date: Date, time: String, shareable: Bool) {
+    init(from: Int, to: Int, date: Date, time: String, shareable: Bool) {
         self.from = from
         self.to = to
         self.date = date

@@ -16,17 +16,22 @@ class MainViewController: UIViewController {
     @IBOutlet weak var purchaseTicketButton: UIButton!
     @IBOutlet weak var viewTicketButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
-    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var etaView: EtaView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var pickupLabel: UILabel!
+    @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var etaLabel: UILabel!
     
     var animated = false;
     
     
     enum EtaStatus: Int {
-        case etaStatusPickup = 100       // Pod is otw to pickup user at their location
-        case etaStatusWaiting = 200      // Pod is waiting for user to get inside
-        case etaStatusDestination = 300  // Pod is otw to user's final destination
-        case etaStatusArrival = 400      // Pod has arrived to the user's final destination
-        case etaStatusNoTicket = 900
+        case pickup = 100       // Pod is otw to pickup user at their location
+        case waiting = 200      // Pod is waiting for user to get inside
+        case destination = 300  // Pod is otw to user's final destination
+        case arrival = 400      // Pod has arrived to the user's final destination
+        case noTicket = 900     // Not Active
+        case delayed = 800      // Pod is delayed due to congestion
     }
     
     
@@ -45,13 +50,6 @@ class MainViewController: UIViewController {
         viewTicketButton.layer.cornerRadius = viewTicketButton.frame.size.height/2
         mapButton.layer.cornerRadius = mapButton.frame.size.height/2
         
-        mainButton.layer.cornerRadius = mainButton.frame.size.height/2
-        mainButton.backgroundColor = UIColor.white
-        mainButton.layer.borderWidth = 10
-        mainButton.layer.borderColor = UIColor(red: 0.04, green: 0.52, blue: 0.85, alpha: 1).cgColor
-        mainButton.setTitleColor(UIColor.black, for: .normal)
-        mainButton.titleLabel?.lineBreakMode = .byWordWrapping
-        mainButton.setTitle("No tickets available", for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,9 +68,9 @@ class MainViewController: UIViewController {
         let userRef = ref.child("users/\(uid)")
         userRef.observe(.childChanged, with: {(snapshot) in
             let currentTicket = snapshot.value as? [String: AnyObject] ?? [:]
-//            print(currentTicket)
-            self.updateEta(from: currentTicket["from"] as! String,
-                           to: currentTicket["to"] as! String,
+            print(currentTicket)
+            self.updateEta(from: currentTicket["from"] as! Int,
+                           to: currentTicket["to"] as! Int,
                            eta: currentTicket["eta"] as! Int,
                            status:  currentTicket["status"] as! Int)
             })
@@ -80,9 +78,9 @@ class MainViewController: UIViewController {
         
     }
     
-    func updateEta(from: String, to: String, eta: Int, status: Int) {
+    func updateEta(from: Int, to: Int, eta: Int, status: Int) {
         
-        var etaString = "Pickup: \(from)\n" +
+        let etaString = "Pickup: \(from)\n" +
             "Destination: \(to)\n\n" +
             "\(status)\n\n" +
             "ETA: \(eta) seconds"
@@ -90,52 +88,85 @@ class MainViewController: UIViewController {
         
         if let etaStatus = EtaStatus(rawValue: status) {
             switch (etaStatus) {
-            case .etaStatusPickup:
-                mainButton.backgroundColor = UIColor.white
+            case .pickup:
+                etaView.centerColor = UIColor.white
                 if animated {
                     stopAnimation()
                 }
-                mainButton.setTitle(etaString, for: .normal)
-            case .etaStatusWaiting:
+            case .waiting:
                 if !animated {
-                    mainButton.backgroundColor = UIColor.init(red: 0, green: 0.70, blue: 0, alpha: 1.0)
+                    etaView.centerColor = UIColor.init(red: 0, green: 0.70, blue: 0, alpha: 1.0)
                     animateButton()
                 }
-                mainButton.setTitle("Your pod is here.\n Please board.\n", for: .normal)
-                
-            case .etaStatusDestination:
-                mainButton.backgroundColor = UIColor.white
+                let tap = UITapGestureRecognizer(target: self, action: #selector(enterPod))
+                etaView.addGestureRecognizer(tap)
+
+            case .destination:
+                etaView.centerColor = UIColor.white
                 if animated {
                     stopAnimation()
                 }
-                mainButton.setTitle(etaString, for: .normal)
-            case .etaStatusArrival:
+            case .arrival:
                 if !animated {
-                    mainButton.backgroundColor = UIColor.red
+                    etaView.centerColor = UIColor.blue
                     animateButton()
                 }
-                mainButton.setTitle("Your pod has arrived at your destination.", for: .normal)
-            
-            case .etaStatusNoTicket:
-                mainButton.backgroundColor = UIColor.white
+                let tap = UITapGestureRecognizer(target: self, action: #selector(exitPod))
+                etaView.addGestureRecognizer(tap)
+           case .noTicket:
+                etaView.centerColor = UIColor.white
                 if animated {
                     stopAnimation()
                 }
-                mainButton.setTitle("No Ticket Information", for: .normal)
+            case .delayed:
+                etaView.centerColor = UIColor.white
+                if !animated{
+                    etaView.centerColor = UIColor.red
+                    animateButton()
+                }
             }
+            
+        }
+    }
+    
+    func enterPod() {
+        print("Pod Entered")
+        
+        let user = FIRAuth.auth()?.currentUser
+        if let uid = user?.uid {
+            let ref = FIRDatabase.database().reference()
+            ref.child("users/\(uid)/currentTicket/eta").setValue(10)
+            ref.child("users/\(uid)/currentTicket/status").setValue(EtaStatus.destination.rawValue)
+        }
+        for recognizer in etaView.gestureRecognizers! {
+            etaView.removeGestureRecognizer(recognizer)
+        }
+        
+    }
+    
+    func exitPod() {
+        print("Pod Exited")
+        
+        let user = FIRAuth.auth()?.currentUser
+        if let uid = user?.uid {
+            let ref = FIRDatabase.database().reference()
+            ref.child("users/\(uid)/currentTicket/status").setValue(EtaStatus.noTicket.rawValue)
+        }
+        for recognizer in etaView.gestureRecognizers! {
+            etaView.removeGestureRecognizer(recognizer)
         }
     }
     
     func animateButton() {
         animated = true
         UIView.animate(withDuration: 1.1, delay: 0.1, options: [.curveEaseOut, .repeat, .autoreverse, .allowUserInteraction], animations: {
-            self.mainButton.backgroundColor = self.mainButton.backgroundColor?.withAlphaComponent(0.5)
+            self.etaView.centerColor = self.etaView.centerColor.withAlphaComponent(0.5)
         }, completion: nil)
     }
     
     func stopAnimation() {
         animated = false
-        mainButton.layer.removeAllAnimations()
+        etaView.layer.removeAllAnimations()
     }
     
     
