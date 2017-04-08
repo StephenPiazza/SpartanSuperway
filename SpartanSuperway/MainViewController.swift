@@ -13,9 +13,9 @@ import Firebase
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var purchaseTicketButton: UIButton!
-    @IBOutlet weak var viewTicketButton: UIButton!
-    @IBOutlet weak var mapButton: UIButton!
+
+    
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var etaView: EtaView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var pickupLabel: UILabel!
@@ -43,17 +43,34 @@ class MainViewController: UIViewController {
 //        gradient.colors = [UIColor(red: 0.04, green: 0.52, blue: 0.85, alpha: 1).cgColor,
 //                           UIColor(red: 0.24, green: 0.62, blue: 0.85, alpha: 1).cgColor,
 //                           UIColor(red: 0.04, green: 0.52, blue: 0.85, alpha: 1).cgColor]
-//        purchaseTicketButton.layer.insertSublayer(gradient, at: 0)
-//        purchaseTicketButton.setImage(UII, for: <#T##UIControlState#>)
 
-        purchaseTicketButton.layer.cornerRadius = purchaseTicketButton.frame.size.height/2
-        viewTicketButton.layer.cornerRadius = viewTicketButton.frame.size.height/2
-        mapButton.layer.cornerRadius = mapButton.frame.size.height/2
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let ref = FIRDatabase.database().reference()
+        let defaults = UserDefaults.standard
+        
+        if let uid = defaults.value(forKey: "uid") {
+            ref.child("users").child(uid as! String).observeSingleEvent(of: .value, with: {(snapshot) in
+                let data = snapshot.value as? NSDictionary
+                let firstName = data?["firstName"] as? String
+                let lastName = data?["lastName"] as? String
+                let currentTicket = snapshot.childSnapshot(forPath: "/currentTicket").value as? NSDictionary
+                let from = currentTicket?["from"] as? Int
+                let to = currentTicket?["to"] as? Int
+                let eta = currentTicket?["eta"] as? Int
+                let status = currentTicket?["status"] as? Int
+                
+                
+                self.userLabel.text = "Welcome \(firstName!) \(lastName!),"
+                self.updateEta(from: from!, to: to!, eta: eta!, status: status!)
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        }
+
         setupEtaListener()
     }
     
@@ -80,20 +97,23 @@ class MainViewController: UIViewController {
     
     func updateEta(from: Int, to: Int, eta: Int, status: Int) {
         
-        let etaString = "Pickup: \(from)\n" +
-            "Destination: \(to)\n\n" +
-            "\(status)\n\n" +
-            "ETA: \(eta) seconds"
-        
         
         if let etaStatus = EtaStatus(rawValue: status) {
             switch (etaStatus) {
             case .pickup:
+                 messageLabel.text = "Your pod is on the way."
+                 pickupLabel.text = "Departure: \(from.description)"
+                 destinationLabel.text = "Destination: \(to.description)"
+                 etaLabel.text = "ETA: \(eta.description)"
                 etaView.centerColor = UIColor.white
                 if animated {
                     stopAnimation()
                 }
             case .waiting:
+                messageLabel.text = "Your pod has arrived! \n Please board."
+                pickupLabel.text = "(Press Circle)"
+                destinationLabel.text = ""
+                etaLabel.text = ""
                 if !animated {
                     etaView.centerColor = UIColor.init(red: 0, green: 0.70, blue: 0, alpha: 1.0)
                     animateButton()
@@ -102,11 +122,19 @@ class MainViewController: UIViewController {
                 etaView.addGestureRecognizer(tap)
 
             case .destination:
+                 messageLabel.text = "On our way!"
+                 pickupLabel.text = "Departure: \(from.description)"
+                 destinationLabel.text = "Destination: \(to.description)"
+                 etaLabel.text = "ETA: \(eta.description)"
                 etaView.centerColor = UIColor.white
                 if animated {
                     stopAnimation()
                 }
             case .arrival:
+                 messageLabel.text = "Your pod has arrived! \n Please depart."
+                 pickupLabel.text = "(Press Circle)"
+                 destinationLabel.text = ""
+                 etaLabel.text = ""
                 if !animated {
                     etaView.centerColor = UIColor.blue
                     animateButton()
@@ -114,11 +142,19 @@ class MainViewController: UIViewController {
                 let tap = UITapGestureRecognizer(target: self, action: #selector(exitPod))
                 etaView.addGestureRecognizer(tap)
            case .noTicket:
+             messageLabel.text = "No Ticket information. \n Purchase Ticket"
+             pickupLabel.text = ""
+             destinationLabel.text = ""
+             etaLabel.text = ""
                 etaView.centerColor = UIColor.white
                 if animated {
                     stopAnimation()
                 }
             case .delayed:
+                 messageLabel.text = "Your pod is delayed! \n Sorry for Inconvenience."
+                 pickupLabel.text = "Departure: \(from.description)"
+                 destinationLabel.text = "Destination: \(to.description)"
+                 etaLabel.text = "ETA: \(eta.description)"
                 etaView.centerColor = UIColor.white
                 if !animated{
                     etaView.centerColor = UIColor.red
@@ -174,6 +210,8 @@ class MainViewController: UIViewController {
         if FIRAuth.auth()?.currentUser != nil {
             do {
                 try FIRAuth.auth()?.signOut()
+                let defaults = UserDefaults.standard
+                defaults.removeObject(forKey: "uid")
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignInViewController")
                 self.present(vc, animated: true, completion: nil)
             } catch let error as Error {
@@ -181,8 +219,6 @@ class MainViewController: UIViewController {
             }
         }
     }
-
-    
     
     
 }

@@ -12,7 +12,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var firstName: UITextField!
@@ -31,8 +31,17 @@ class SignUpViewController: UIViewController {
                     ref = ref.child("users").child(uid!)
                     ref.child("firstName").setValue(self.firstName.text)
                     ref.child("lastName").setValue(self.lastName.text)
-                    ref.child("currentTicket").child("alive").setValue(false)
-                    self.performSegue(withIdentifier: "SignUpSuccessSegue", sender: self)
+                    ref.child("currentTicket").child("isNewTicket").setValue(false)
+                    ref.child("currentTicket").child("to").setValue(1)
+                    ref.child("currentTicket").child("from").setValue(1)
+                    ref.child("currentTicket").child("eta").setValue(0)
+                    ref.child("currentTicket").child("status").setValue(900)
+                    ref.child("currentTicket").child("timerOn").setValue(false)
+                    
+                    let defaults = UserDefaults.standard
+                    defaults.set(uid, forKey: "uid")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+                    self.present(vc, animated: true, completion: nil)
                     
                 } else {
                     let alertController = UIAlertController(title: "Oops", message: error?.localizedDescription, preferredStyle: .alert)
@@ -64,6 +73,11 @@ class SignUpViewController: UIViewController {
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         let emailTester = NSPredicate(format: "SELF MATCHES %@", regex)
         return emailTester.evaluate(with: email.text!);
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing((true))
+        super.touchesBegan(touches, with: event)
     }
     
 
