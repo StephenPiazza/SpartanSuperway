@@ -42,6 +42,14 @@ class TicketViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
+        
         self.dismiss(animated: true, completion: nil)
+        let parentVc = self.presentingViewController as! UITabBarController
+        if parentVc.selectedIndex == 1 {
+            print("Parent = Purchase")
+            parentVc.selectedIndex = 0
+            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+//            self.present(vc, animated: true, completion: nil)
+        }
     }
 }

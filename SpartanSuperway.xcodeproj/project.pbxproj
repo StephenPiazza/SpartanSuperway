@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1404EA418EE1B3CB93119D10 /* Pods_SpartanSuperway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EBA0084F506C568F3364C8 /* Pods_SpartanSuperway.framework */; };
+		44046E281EBA82FE00AC0429 /* Sunny.gif in Resources */ = {isa = PBXBuildFile; fileRef = 44046E271EBA82FE00AC0429 /* Sunny.gif */; };
+		44046E2A1EBA85F000AC0429 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44046E291EBA85F000AC0429 /* iOSDevCenters+GIF.swift */; };
 		442892011DAEE90100A7E423 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442892001DAEE90100A7E423 /* MainViewController.swift */; };
 		442CAB6D1D9CA7F400A4008F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442CAB6C1D9CA7F400A4008F /* SignUpViewController.swift */; };
 		443B25F41DDEB219008F94A1 /* ViewTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F31DDEB219008F94A1 /* ViewTicketsViewController.swift */; };
@@ -52,6 +54,8 @@
 		00CCF6F61CF3BF9BD7726D68 /* Pods-SpartanSuperwayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayTests/Pods-SpartanSuperwayTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E71AFCBCC221751F60EAA6C /* Pods-SpartanSuperway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperway/Pods-SpartanSuperway.debug.xcconfig"; sourceTree = "<group>"; };
 		16EBA0084F506C568F3364C8 /* Pods_SpartanSuperway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44046E271EBA82FE00AC0429 /* Sunny.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sunny.gif; sourceTree = "<group>"; };
+		44046E291EBA85F000AC0429 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		442892001DAEE90100A7E423 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		442CAB6C1D9CA7F400A4008F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		443B25F31DDEB219008F94A1 /* ViewTicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTicketsViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44046E261EBA825B00AC0429 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				44046E271EBA82FE00AC0429 /* Sunny.gif */,
+			);
+			name = Gif;
+			sourceTree = "<group>";
+		};
 		4470DA1B1D95D6AA002468D8 = {
 			isa = PBXGroup;
 			children = (
@@ -182,12 +194,14 @@
 		44724D471DF5F3DC00ECD73C /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				44046E261EBA825B00AC0429 /* Gif */,
 				447B4EBB1DA0E5950072AAD4 /* GoogleService-Info.plist */,
 				4470DA271D95D6AA002468D8 /* AppDelegate.swift */,
 				4470DA2B1D95D6AA002468D8 /* Main.storyboard */,
 				4470DA2E1D95D6AA002468D8 /* Assets.xcassets */,
 				4470DA301D95D6AA002468D8 /* LaunchScreen.storyboard */,
 				4470DA331D95D6AA002468D8 /* Info.plist */,
+				44046E291EBA85F000AC0429 /* iOSDevCenters+GIF.swift */,
 			);
 			name = SupportFiles;
 			sourceTree = "<group>";
@@ -302,6 +316,7 @@
 					4470DA231D95D6AA002468D8 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2ZPV6SNEWK;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4470DA371D95D6AA002468D8 = {
@@ -344,6 +359,7 @@
 				4470DA321D95D6AA002468D8 /* LaunchScreen.storyboard in Resources */,
 				447B4EBC1DA0E5950072AAD4 /* GoogleService-Info.plist in Resources */,
 				4470DA2F1D95D6AA002468D8 /* Assets.xcassets in Resources */,
+				44046E281EBA82FE00AC0429 /* Sunny.gif in Resources */,
 				4470DA2D1D95D6AA002468D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +511,7 @@
 				44724D451DF5514E00ECD73C /* MapViewController.swift in Sources */,
 				4470DA581D9A10A8002468D8 /* SignInViewController.swift in Sources */,
 				442CAB6D1D9CA7F400A4008F /* SignUpViewController.swift in Sources */,
+				44046E2A1EBA85F000AC0429 /* iOSDevCenters+GIF.swift in Sources */,
 				443B25F81DDFB999008F94A1 /* Ticket.swift in Sources */,
 				4470DA281D95D6AA002468D8 /* AppDelegate.swift in Sources */,
 				443B25F41DDEB219008F94A1 /* ViewTicketsViewController.swift in Sources */,

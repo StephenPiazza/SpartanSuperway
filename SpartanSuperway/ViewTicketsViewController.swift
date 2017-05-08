@@ -13,10 +13,10 @@ import Firebase
 class ViewTicketsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     enum Station: Int {
-        case SJSU = 1
-        case SJSUStadium = 2
-        case Diridon = 3
-        case SantaClara = 4
+        case sjsu = 1
+        case sjsuStadium = 2
+        case diridon = 3
+        case santaClara = 4
     }
     
     @IBOutlet weak var segControl: UISegmentedControl!

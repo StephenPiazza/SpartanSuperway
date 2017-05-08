@@ -13,10 +13,10 @@ import FirebaseAuth
 class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
     enum Station: Int {
-        case SJSU = 1
-        case SJSUStadium = 2
-        case Diridon = 3
-        case SantaClara = 4
+        case sjsu = 1
+        case sjsuStadium = 2
+        case diridon = 3
+        case santaClara = 4
     }
     
     @IBOutlet weak var locationFrom: UITextField!
@@ -29,7 +29,9 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
     var pickerView1: UIPickerView?
     var pickerView2: UIPickerView?
     
-    var pickerOptions = ["SJSU","SJSU Stadium","Diridon","Santa Clara"]
+//    var pickerOptions = ["SJSU","SJSU Stadium","Diridon","Santa Clara"]
+    var pickerOptions = ["Station 1","Station 2","Station 3","Station 4"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,42 +64,61 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
         datePickerView.datePickerMode = UIDatePickerMode.date
         datePickerView.minimumDate = Date()
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
+        datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
     }
     
     @IBAction func timeFieldEditing(_ sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.time
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(timePickerValueChanged(sender:)), for: .valueChanged)
+        datePickerView.addTarget(self, action: #selector(timePickerValueChanged), for: .valueChanged)
     }
     
     @IBAction func purchaseTicket(_ sender: Any) {
         
         var from = 0;
+        print(locationFrom.text!)
         switch (locationFrom.text!) {
         case "SJSU":
-            from = Station.SJSU.rawValue
+            from = Station.sjsu.rawValue
         case "SJSU Stadium":
-            from = Station.SJSUStadium.rawValue
+            from = Station.sjsuStadium.rawValue
         case "Diridon":
-            from = Station.Diridon.rawValue
+            from = Station.diridon.rawValue
         case "Santa Clara":
-            from = Station.SantaClara.rawValue
+            from = Station.santaClara.rawValue
+        case "Station 1":
+            from = 1
+        case "Station 2":
+            from = 2
+        case "Station 3":
+            from = 3
+        case "Station 4":
+            from = 4
         default:
             break
         }
         
         var to = 0;
+        
+        print(locationTo.text!)
         switch (locationTo.text!) {
         case "SJSU":
-            to = Station.SJSU.rawValue
+            to = Station.sjsu.rawValue
         case "SJSU Stadium":
-            to = Station.SJSUStadium.rawValue
+            to = Station.sjsuStadium.rawValue
         case "Diridon":
-            to = Station.Diridon.rawValue
+            to = Station.diridon.rawValue
         case "Santa Clara":
-            to = Station.SantaClara.rawValue
+            to = Station.santaClara.rawValue
+        case "Station 1":
+            to = 1
+        case "Station 2":
+            to = 2
+        case "Station 3":
+            to = 3
+        case "Station 4":
+            to = 4
         default:
             break
         }
@@ -110,24 +131,30 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
         dateFormatter.dateStyle = DateFormatter.Style.medium
         let timeDate = dateFormatter.date(from: ticketDate)
         print("\(timeDate)")
+        print(from)
+        print(to)
         let tempTicket = Ticket(from: from, to: to, date: timeDate!, time: ticketTime, shareable: rideShare)
         self.ticket = tempTicket
+        print(self.ticket)
+        store(self.ticket)
         
-        store(ticket: self.ticket)
-        
-//
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TicketViewController") as! TicketViewController
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
+
 //        definesPresentationContext = true
 //        let ticketViewController = TicketViewController()
 //        ticketViewController.modalTransitionStyle = .crossDissolve
 //        ticketViewController.modalPresentationStyle = .overCurrentContext
 //        present(ticketViewController, animated: true, completion: nil)
 //        modalPresentationStyle = .overCurrentContext
-//        performSegue(withIdentifier: "ticketSegue", sender: self)
+//        self.present(ticketViewController, animated: true, completion: nil)
         
     }
     
-    func store(ticket: Ticket) {
+    func store(_ ticket: Ticket) {
         
+        print(ticket)
         let user = FIRAuth.auth()?.currentUser
         if let uid = user?.uid {
             print(uid)
@@ -141,6 +168,9 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
             ref.child("users/\(uid)/currentTicket/timerOn").setValue(false)
         
         }
+        
+//        let vc = UIStoryboard(name: "TicketViewController", bundle: nil).instantiateViewController(withIdentifier: "TicketViewController")
+//        self.present(vc, animated: true, completion: nil)
 
     }
     
@@ -169,14 +199,14 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
 //    }
 //    
     
-    func datePickerValueChanged(sender:UIDatePicker) {
+    func datePickerValueChanged(_ sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.none
         date.text = dateFormatter.string(from: sender.date)
     }
     
-    func timePickerValueChanged(sender:UIDatePicker) {
+    func timePickerValueChanged(_ sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = DateFormatter.Style.short
         dateFormatter.dateStyle = DateFormatter.Style.none

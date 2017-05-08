@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         if validateUserInformation() {
             FIRAuth.auth()?.createUser(withEmail: email.text!, password: password.text!, completion: { (user, error) in
                 if error == nil {
-                    var uid = FIRAuth.auth()?.currentUser?.uid
+                    let uid = FIRAuth.auth()?.currentUser?.uid
                     var ref = FIRDatabase.database().reference()
                     
                     ref = ref.child("users").child(uid!)

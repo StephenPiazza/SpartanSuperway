@@ -11,13 +11,13 @@ import UIKit
 class EtaView: UIView {
     
     @IBInspectable
-    public var eta: CGFloat = 1 {
+    open var eta: CGFloat = 1 {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    @IBInspectable public var centerColor: UIColor = UIColor.white {
+    @IBInspectable open var centerColor: UIColor = UIColor.white {
         didSet {
             setNeedsDisplay()
         }

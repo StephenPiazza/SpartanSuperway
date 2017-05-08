@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
 
     
+    @IBOutlet weak var backgroundGif: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var etaView: EtaView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -23,6 +24,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var etaLabel: UILabel!
     
     var animated = false;
+    
     
     
     enum EtaStatus: Int {
@@ -44,6 +46,10 @@ class MainViewController: UIViewController {
 //                           UIColor(red: 0.24, green: 0.62, blue: 0.85, alpha: 1).cgColor,
 //                           UIColor(red: 0.04, green: 0.52, blue: 0.85, alpha: 1).cgColor]
 
+//        let jeremyGif = UIImage.gifImageWithName("Sunny")
+//        let imageView = UIImageView(image: jeremyGif)
+//        imageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 150.0)
+//        view.addSubview(imageView)
         
     }
     
@@ -63,9 +69,7 @@ class MainViewController: UIViewController {
                 let eta = currentTicket?["eta"] as? Int
                 let status = currentTicket?["status"] as? Int
                 
-                
-                self.userLabel.text = "Welcome \(firstName!) \(lastName!),"
-                self.updateEta(from: from!, to: to!, eta: eta!, status: status!)
+                self.updateEta(from!, to: to!, eta: eta!, status: status!)
             }) { (error) in
                 print(error.localizedDescription)
             }
@@ -85,8 +89,8 @@ class MainViewController: UIViewController {
         let userRef = ref.child("users/\(uid)")
         userRef.observe(.childChanged, with: {(snapshot) in
             let currentTicket = snapshot.value as? [String: AnyObject] ?? [:]
-            print(currentTicket)
-            self.updateEta(from: currentTicket["from"] as! Int,
+//            print(currentTicket)
+            self.updateEta(currentTicket["from"] as! Int,
                            to: currentTicket["to"] as! Int,
                            eta: currentTicket["eta"] as! Int,
                            status:  currentTicket["status"] as! Int)
@@ -95,7 +99,7 @@ class MainViewController: UIViewController {
         
     }
     
-    func updateEta(from: Int, to: Int, eta: Int, status: Int) {
+    func updateEta(_ from: Int, to: Int, eta: Int, status: Int) {
         
         
         if let etaStatus = EtaStatus(rawValue: status) {
@@ -195,14 +199,21 @@ class MainViewController: UIViewController {
     
     func animateButton() {
         animated = true
-        UIView.animate(withDuration: 1.1, delay: 0.1, options: [.curveEaseOut, .repeat, .autoreverse, .allowUserInteraction], animations: {
-            self.etaView.centerColor = self.etaView.centerColor.withAlphaComponent(0.5)
-        }, completion: nil)
+        UIView.animate(withDuration: 1.1,
+                       delay: 0.1,
+                       options: [.curveEaseOut, .repeat, .autoreverse, .allowUserInteraction],
+                       animations: changeColor,
+                       completion: nil)
     }
     
     func stopAnimation() {
         animated = false
         etaView.layer.removeAllAnimations()
+    }
+    
+    func changeColor() {
+        self.etaView.centerColor = self.etaView.centerColor.withAlphaComponent(0.5)
+        
     }
     
     
