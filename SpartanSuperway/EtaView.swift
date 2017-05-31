@@ -23,6 +23,11 @@ class EtaView: UIView {
         }
     }
     
+    @IBInspectable open var gifImage: UIImage = UIImage.gifImageWithName("hello")! {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     override func draw(_ rect: CGRect) {
         
@@ -54,13 +59,25 @@ class EtaView: UIView {
         
         
         //Draw the inner circle
-        let circle = UIBezierPath(arcCenter: center,
-                                  radius: radius/2-arcWidth,
-                                  startAngle: 0,
-                                  endAngle: CGFloat(2*Double.pi),
-                                  clockwise: true)
-        centerColor.setFill()
-        circle.fill()
+//        let circle = UIBezierPath(arcCenter: center,
+//                                  radius: radius/2-arcWidth,
+//                                  startAngle: 0,
+//                                  endAngle: CGFloat(2*Double.pi),
+//                                  clockwise: true)
+//        centerColor.setFill()
+//        circle.fill()
+
+       let gifImageView = UIImageView(image: gifImage)
+        gifImageView.frame = CGRect(x: arcWidth*1.5,y: arcWidth, width: radius-arcWidth*2, height: radius-arcWidth*2)
+        gifImageView.layer.cornerRadius = gifImageView.bounds.size.width/2
+        gifImageView.clipsToBounds = true
+        self.addSubview(gifImageView)
+//
+        
+        //        self.gifImageView.image = sunnyGif
+        //        self.gifImageView.layer.cornerRadius = self.gifImageView.frame.size.width/2
+        //        self.gifImageView.clipsToBounds = true
+
         
         
     }

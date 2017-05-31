@@ -32,7 +32,6 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
 //    var pickerOptions = ["SJSU","SJSU Stadium","Diridon","Santa Clara"]
     var pickerOptions = ["Station 1","Station 2","Station 3","Station 4"]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +54,8 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
         dateFormatter.timeStyle = DateFormatter.Style.short
         dateFormatter.dateStyle = DateFormatter.Style.none
         time.text = dateFormatter.string(for: Date.init())
+        
+        
         
         
     }
@@ -140,6 +141,7 @@ class PurchaseTicketViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TicketViewController") as! TicketViewController
         vc.modalPresentationStyle = .overCurrentContext
+        vc.ticket = self.ticket
         self.present(vc, animated: true, completion: nil)
 
 //        definesPresentationContext = true

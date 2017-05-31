@@ -16,6 +16,9 @@
 		443B25F61DDEB4E3008F94A1 /* PurchaseTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F51DDEB4E3008F94A1 /* PurchaseTicketViewController.swift */; };
 		443B25F81DDFB999008F94A1 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F71DDFB999008F94A1 /* Ticket.swift */; };
 		443B25FA1DE0397C008F94A1 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B25F91DE0397C008F94A1 /* TicketViewController.swift */; };
+		446B2F9E1EC97F6400086957 /* pod_moving.gif in Resources */ = {isa = PBXBuildFile; fileRef = 446B2F9D1EC97F6400086957 /* pod_moving.gif */; };
+		446B2FA01EC97F6B00086957 /* pod_station.gif in Resources */ = {isa = PBXBuildFile; fileRef = 446B2F9F1EC97F6B00086957 /* pod_station.gif */; };
+		446B2FA21EC97F9300086957 /* hello.gif in Resources */ = {isa = PBXBuildFile; fileRef = 446B2FA11EC97F9300086957 /* hello.gif */; };
 		4470DA281D95D6AA002468D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470DA271D95D6AA002468D8 /* AppDelegate.swift */; };
 		4470DA2D1D95D6AA002468D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4470DA2B1D95D6AA002468D8 /* Main.storyboard */; };
 		4470DA2F1D95D6AA002468D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4470DA2E1D95D6AA002468D8 /* Assets.xcassets */; };
@@ -29,8 +32,8 @@
 		44724D4A1DF75E4E00ECD73C /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44724D491DF75E4E00ECD73C /* DataServices.swift */; };
 		447B4EBC1DA0E5950072AAD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447B4EBB1DA0E5950072AAD4 /* GoogleService-Info.plist */; };
 		449EF5871E96079A0007F2CF /* EtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449EF5861E96079A0007F2CF /* EtaView.swift */; };
-		E3944D8975FE400460401CD9 /* Pods_SpartanSuperwayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B531E0B2919443E0F801C2D /* Pods_SpartanSuperwayUITests.framework */; };
-		F6474A3774C473CD57159ECC /* Pods_SpartanSuperwayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC08B5EAB0D52329E90EDF94 /* Pods_SpartanSuperwayTests.framework */; };
+		5D8F1B21725C27205D9D006B /* Pods_SpartanSuperwayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E6CECBFC197BFF1C28F84F /* Pods_SpartanSuperwayUITests.framework */; };
+		6FDA1BDE2E3B48AF801DA8DB /* Pods_SpartanSuperwayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474F28C54DABBAA2E55F4807 /* Pods_SpartanSuperwayTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		443B25F51DDEB4E3008F94A1 /* PurchaseTicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseTicketViewController.swift; sourceTree = "<group>"; };
 		443B25F71DDFB999008F94A1 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		443B25F91DE0397C008F94A1 /* TicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		446B2F9D1EC97F6400086957 /* pod_moving.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pod_moving.gif; sourceTree = "<group>"; };
+		446B2F9F1EC97F6B00086957 /* pod_station.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pod_station.gif; sourceTree = "<group>"; };
+		446B2FA11EC97F9300086957 /* hello.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hello.gif; sourceTree = "<group>"; };
 		4470DA241D95D6AA002468D8 /* SpartanSuperway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanSuperway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4470DA271D95D6AA002468D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4470DA2C1D95D6AA002468D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,12 +87,12 @@
 		44724D491DF75E4E00ECD73C /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		447B4EBB1DA0E5950072AAD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		449EF5861E96079A0007F2CF /* EtaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtaView.swift; sourceTree = "<group>"; };
-		8B531E0B2919443E0F801C2D /* Pods_SpartanSuperwayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperwayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		474F28C54DABBAA2E55F4807 /* Pods_SpartanSuperwayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperwayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E6CECBFC197BFF1C28F84F /* Pods_SpartanSuperwayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperwayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6E4D41F3795F18F4066B6E /* Pods-SpartanSuperwayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayUITests/Pods-SpartanSuperwayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1785E424903771A57F50521 /* Pods-SpartanSuperwayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayUITests/Pods-SpartanSuperwayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A97888A68A1306BC17AEC1FC /* Pods-SpartanSuperway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperway.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperway/Pods-SpartanSuperway.release.xcconfig"; sourceTree = "<group>"; };
 		C3363333186E064AA72AD4EA /* Pods-SpartanSuperwayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanSuperwayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanSuperwayTests/Pods-SpartanSuperwayTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DC08B5EAB0D52329E90EDF94 /* Pods_SpartanSuperwayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanSuperwayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6474A3774C473CD57159ECC /* Pods_SpartanSuperwayTests.framework in Frameworks */,
+				6FDA1BDE2E3B48AF801DA8DB /* Pods_SpartanSuperwayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3944D8975FE400460401CD9 /* Pods_SpartanSuperwayUITests.framework in Frameworks */,
+				5D8F1B21725C27205D9D006B /* Pods_SpartanSuperwayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				44046E271EBA82FE00AC0429 /* Sunny.gif */,
+				446B2F9D1EC97F6400086957 /* pod_moving.gif */,
+				446B2F9F1EC97F6B00086957 /* pod_station.gif */,
+				446B2FA11EC97F9300086957 /* hello.gif */,
 			);
 			name = Gif;
 			sourceTree = "<group>";
@@ -220,8 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				16EBA0084F506C568F3364C8 /* Pods_SpartanSuperway.framework */,
-				DC08B5EAB0D52329E90EDF94 /* Pods_SpartanSuperwayTests.framework */,
-				8B531E0B2919443E0F801C2D /* Pods_SpartanSuperwayUITests.framework */,
+				474F28C54DABBAA2E55F4807 /* Pods_SpartanSuperwayTests.framework */,
+				52E6CECBFC197BFF1C28F84F /* Pods_SpartanSuperwayUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,10 +366,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4470DA321D95D6AA002468D8 /* LaunchScreen.storyboard in Resources */,
+				446B2FA21EC97F9300086957 /* hello.gif in Resources */,
 				447B4EBC1DA0E5950072AAD4 /* GoogleService-Info.plist in Resources */,
 				4470DA2F1D95D6AA002468D8 /* Assets.xcassets in Resources */,
 				44046E281EBA82FE00AC0429 /* Sunny.gif in Resources */,
+				446B2F9E1EC97F6400086957 /* pod_moving.gif in Resources */,
 				4470DA2D1D95D6AA002468D8 /* Main.storyboard in Resources */,
+				446B2FA01EC97F6B00086957 /* pod_station.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

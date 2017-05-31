@@ -15,13 +15,14 @@ class MainViewController: UIViewController {
     
 
     
-    @IBOutlet weak var backgroundGif: UIImageView!
-    @IBOutlet weak var userLabel: UILabel!
+//    @IBOutlet weak var backgroundGif: UIImageView!
+//    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var etaView: EtaView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var pickupLabel: UILabel!
     @IBOutlet weak var destinationLabel: UILabel!
-    @IBOutlet weak var etaLabel: UILabel!
+//    @IBOutlet weak var etaLabel: UILabel!
+    @IBOutlet weak var actionButton: UIButton!
     
     var animated = false;
     
@@ -39,18 +40,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let gradient = CAGradientLayer()
-//        gradient.frame = purchaseTicketButton.bounds
-//        gradient.cornerRadius = purchaseTicketButton.frame.size.height/2
-//        gradient.colors = [UIColor(red: 0.04, green: 0.52, blue: 0.85, alpha: 1).cgColor,
-//                           UIColor(red: 0.24, green: 0.62, blue: 0.85, alpha: 1).cgColor,
-//                           UIColor(red: 0.04, green: 0.52, blue: 0.85, alpha: 1).cgColor]
-
-//        let jeremyGif = UIImage.gifImageWithName("Sunny")
-//        let imageView = UIImageView(image: jeremyGif)
-//        imageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 150.0)
-//        view.addSubview(imageView)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,8 +63,8 @@ class MainViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-
         setupEtaListener()
+        
     }
     
     
@@ -106,64 +95,92 @@ class MainViewController: UIViewController {
             switch (etaStatus) {
             case .pickup:
                  messageLabel.text = "Your pod is on the way."
-                 pickupLabel.text = "Departure: \(from.description)"
-                 destinationLabel.text = "Destination: \(to.description)"
-                 etaLabel.text = "ETA: \(eta.description)"
-                etaView.centerColor = UIColor.white
+                 pickupLabel.text = "Station \(from.description)"
+                 destinationLabel.text = "Station \(to.description)"
+//                 etaLabel.text = "ETA: \(eta.description)"
+//                etaView.centerColor = UIColor.white
+                 etaView.gifImage = UIImage.gifImageWithName("pod_moving")!
+                 
+                 actionButton.setTitle("Enter", for: .normal)
+                 actionButton.addTarget(self, action: #selector(enterPod), for: .touchUpInside)
+                 actionButton.isEnabled = false
+                 actionButton.alpha = 0.0
                 if animated {
                     stopAnimation()
                 }
             case .waiting:
                 messageLabel.text = "Your pod has arrived! \n Please board."
-                pickupLabel.text = "(Press Circle)"
-                destinationLabel.text = ""
-                etaLabel.text = ""
+                pickupLabel.text = "Station \(from.description)"
+                destinationLabel.text = "Station \(to.description)"
+//                etaLabel.text = ""
+                etaView.gifImage = UIImage.gifImageWithName("pod_station")!
                 if !animated {
                     etaView.centerColor = UIColor.init(red: 0, green: 0.70, blue: 0, alpha: 1.0)
                     animateButton()
                 }
-                let tap = UITapGestureRecognizer(target: self, action: #selector(enterPod))
-                etaView.addGestureRecognizer(tap)
+                actionButton.setTitle("Enter", for: .normal)
+                actionButton.addTarget(self, action: #selector(enterPod), for: .touchUpInside)
+                actionButton.isEnabled = true
+                actionButton.alpha = 1.0
+//                let tap = UITapGestureRecognizer(target: self, action: #selector(enterPod))
+//                etaView.addGestureRecognizer(tap)
 
             case .destination:
                  messageLabel.text = "On our way!"
-                 pickupLabel.text = "Departure: \(from.description)"
-                 destinationLabel.text = "Destination: \(to.description)"
-                 etaLabel.text = "ETA: \(eta.description)"
-                etaView.centerColor = UIColor.white
+                 pickupLabel.text = "Station \(from.description)"
+                 destinationLabel.text = "Station \(to.description)"
+//                 etaLabel.text = "ETA: \(eta.description)"
+//                etaView.centerColor = UIColor.white
+                 etaView.gifImage = UIImage.gifImageWithName("pod_moving")!
+                 
+                 actionButton.setTitle("Enter", for: .normal)
+                 actionButton.addTarget(self, action: #selector(enterPod), for: .touchUpInside)
+                 actionButton.isEnabled = false
+                 actionButton.alpha = 0.0
                 if animated {
                     stopAnimation()
                 }
             case .arrival:
                  messageLabel.text = "Your pod has arrived! \n Please depart."
-                 pickupLabel.text = "(Press Circle)"
-                 destinationLabel.text = ""
-                 etaLabel.text = ""
+                 pickupLabel.text = "Station \(from.description)"
+                 destinationLabel.text = "Station \(to.description)"
+//                 etaLabel.text = ""
+                etaView.gifImage = UIImage.gifImageWithName("pod_station")!
                 if !animated {
                     etaView.centerColor = UIColor.blue
                     animateButton()
                 }
-                let tap = UITapGestureRecognizer(target: self, action: #selector(exitPod))
-                etaView.addGestureRecognizer(tap)
+                 
+                 actionButton.setTitle("Exit", for: .normal)
+                 actionButton.addTarget(self, action: #selector(exitPod), for: .touchUpInside)
+                 actionButton.isEnabled = true
+                 actionButton.alpha = 1.0
+//                let tap = UITapGestureRecognizer(target: self, action: #selector(exitPod))
+//                etaView.addGestureRecognizer(tap)
            case .noTicket:
              messageLabel.text = "No Ticket information. \n Purchase Ticket"
              pickupLabel.text = ""
              destinationLabel.text = ""
-             etaLabel.text = ""
+//             etaLabel.text = ""
                 etaView.centerColor = UIColor.white
+             etaView.gifImage = UIImage.gifImageWithName("hello")!
                 if animated {
                     stopAnimation()
                 }
+             actionButton.isEnabled = false
+             actionButton.alpha = 0.0
             case .delayed:
                  messageLabel.text = "Your pod is delayed! \n Sorry for Inconvenience."
-                 pickupLabel.text = "Departure: \(from.description)"
-                 destinationLabel.text = "Destination: \(to.description)"
-                 etaLabel.text = "ETA: \(eta.description)"
-                etaView.centerColor = UIColor.white
+                 pickupLabel.text = "Station \(from.description)"
+                 destinationLabel.text = "Station \(to.description)"
+//                 etaLabel.text = "ETA: \(eta.description)"
+//                etaView.centerColor = UIColor.white
                 if !animated{
                     etaView.centerColor = UIColor.red
                     animateButton()
                 }
+                 actionButton.isEnabled = false
+                 actionButton.alpha = 0.0
             }
             
         }
@@ -178,9 +195,9 @@ class MainViewController: UIViewController {
             ref.child("users/\(uid)/currentTicket/eta").setValue(10)
             ref.child("users/\(uid)/currentTicket/status").setValue(EtaStatus.destination.rawValue)
         }
-        for recognizer in etaView.gestureRecognizers! {
-            etaView.removeGestureRecognizer(recognizer)
-        }
+//        for recognizer in etaView.gestureRecognizers! {
+//            etaView.removeGestureRecognizer(recognizer)
+//        }
         
     }
     
@@ -192,9 +209,9 @@ class MainViewController: UIViewController {
             let ref = FIRDatabase.database().reference()
             ref.child("users/\(uid)/currentTicket/status").setValue(EtaStatus.noTicket.rawValue)
         }
-        for recognizer in etaView.gestureRecognizers! {
-            etaView.removeGestureRecognizer(recognizer)
-        }
+//        for recognizer in etaView.gestureRecognizers! {
+//            etaView.removeGestureRecognizer(recognizer)
+//        }
     }
     
     func animateButton() {

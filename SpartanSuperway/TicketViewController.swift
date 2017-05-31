@@ -28,17 +28,31 @@ class TicketViewController: UIViewController {
     @IBOutlet weak var qrCode: UIImageView!
     @IBOutlet weak var exitButton: UIButton!
     
-    override func viewDidLoad() {
-        print(ticket)
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         exitButton.layer.cornerRadius = exitButton.frame.size.height/2
+        print("ticket: \(ticket)")
         if let tempTicket = self.ticket {
-            locationFrom.text = String(tempTicket.from)
-            locationTo.text = String(tempTicket.to)
+            print("ticket: \(tempTicket)")
+            locationFrom.text = "Station \(String(tempTicket.from))"
+            locationTo.text = "Station \(String(tempTicket.to))"
             date.text = tempTicket.date.description
             time.text = tempTicket.time
             shareable.text = tempTicket.shareable.description
         }
+    }
+    
+    override func viewDidLoad() {
+        print(ticket)
+        super.viewDidLoad()
+//        exitButton.layer.cornerRadius = exitButton.frame.size.height/2
+//        if let tempTicket = self.ticket {
+//            locationFrom.text = String(tempTicket.from)
+//            locationTo.text = String(tempTicket.to)
+//            date.text = tempTicket.date.description
+//            time.text = tempTicket.time
+//            shareable.text = tempTicket.shareable.description
+//        }
     }
     
     @IBAction func done(_ sender: Any) {
@@ -48,8 +62,7 @@ class TicketViewController: UIViewController {
         if parentVc.selectedIndex == 1 {
             print("Parent = Purchase")
             parentVc.selectedIndex = 0
-            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-//            self.present(vc, animated: true, completion: nil)
+
         }
     }
 }
